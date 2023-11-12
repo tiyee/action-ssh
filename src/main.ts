@@ -53,10 +53,12 @@ export async function proc(): Promise<void> {
             .on('data', (data: Buffer) => {
               core.debug(`STDOUT: ${data}`)
               core.setOutput('result', arrayBufferToString(data))
+              console.log(data.toString('utf-8'));
             })
             .stderr.on('data', data => {
               core.debug(`STDERR: ${data}`)
               core.setOutput('error', arrayBufferToString(data))
+              console.log(data.toString('utf-8'));
             })
         })
       })
