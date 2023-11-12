@@ -56,7 +56,12 @@ jobs:
         id: test-action
         uses: ./
         with:
-          milliseconds: 1000
+          host: ${{ secrets.HOST }} 
+          port: ${{ secrets.PORT }} 
+          username: ${{ secrets.USERNAME }} 
+          privateKey: ${{ secrets.PRIVATE_KEY }} 
+          command: ''
+
 
       - name: Print Output
         id: output

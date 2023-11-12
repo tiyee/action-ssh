@@ -1,6 +1,6 @@
-name: 'The name of your action here'
-description: 'Provide a description here'
-author: 'Your name or organization here'
+name: 'Action-SSH'
+description: ' Simple GitHub Action to run commands on a remote server using SSH.'
+author: 'tiyee'
 
 # Add your action's branding here. This will appear on the GitHub Marketplace.
 branding:
@@ -9,15 +9,22 @@ branding:
 
 # Define your inputs here.
 inputs:
-  milliseconds:
-    description: 'Your input description here'
+  command:
+    description: "Command to execute on the remote server."
     required: true
-    default: '1000'
-
-# Define your outputs here.
-outputs:
-  time:
-    description: 'Your output description here'
+  host:
+    description: "Hostname or IP address of the server."
+    required: true
+  username:
+    description: "Username for authentication."
+    required: true
+  port:
+    description: "Port number of the server."
+    required: false
+    default: "22"
+  privateKey:
+    description: "File  string that contains a private key for either key-based or hostbased user authentication (OpenSSH format)"
+    required: true
 
 runs:
   using: node20
