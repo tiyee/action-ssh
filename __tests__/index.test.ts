@@ -5,7 +5,7 @@
 import * as main from '../src/main'
 
 // Mock the action's entrypoint
-const runMock = jest.spyOn(main, 'run').mockImplementation()
+const runMock = jest.spyOn(main, 'proc').mockImplementation()
 
 describe('index', () => {
   it('calls run when imported', async () => {

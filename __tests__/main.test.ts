@@ -10,7 +10,7 @@ import * as core from '@actions/core'
 import * as main from '../src/main'
 
 // Mock the action's main function
-const runMock = jest.spyOn(main, 'run')
+const runMock = jest.spyOn(main, 'proc')
 
 // Other utilities
 const timeRegex = /^\d{2}:\d{2}:\d{2}/
@@ -44,7 +44,7 @@ describe('action', () => {
       }
     })
 
-    await main.run()
+    await main.proc()
     expect(runMock).toHaveReturned()
 
     // Verify that all of the core library functions were called correctly
@@ -76,7 +76,7 @@ describe('action', () => {
       }
     })
 
-    await main.run()
+    await main.proc()
     expect(runMock).toHaveReturned()
 
     // Verify that all of the core library functions were called correctly
