@@ -68,7 +68,7 @@ jobs:
           port: ${{ secrets.PORT }} 
           username: ${{ secrets.USERNAME }} 
           privateKey: ${{ secrets.PRIVATE_KEY }} 
-          command: 'cd ~/api/ && sudo docker compose -f docker-compose.yml up -d'
+          command: 'ls -l'
 
 
       - name: Print Output
