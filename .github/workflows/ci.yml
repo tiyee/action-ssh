@@ -73,4 +73,4 @@ jobs:
 
       - name: Print Output
         id: output
-        run: echo "result ${{ steps.test-action.outputs.result }}  error: ${{ steps.test-action.outputs.error }}"
+        run: echo "${{ steps.test-action.outputs.result }}   ${{ steps.test-action.outputs.error }}"
